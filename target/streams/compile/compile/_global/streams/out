@@ -1,0 +1,6 @@
+[debug] Acquiring lock on file C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\project\target\.sbt-compilation-infos\two-dimensional-layout-library-compile\.sbt-idea-lock ...
+[error] C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\src\main\scala\Main.scala:9:14: value const is not a member of ArrayElement
+[error]   println(ae.const)
+[error]              ^
+[error] one error found
+[debug] Releasing lock on file C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\project\target\.sbt-compilation-infos\two-dimensional-layout-library-compile\.sbt-idea-lock.

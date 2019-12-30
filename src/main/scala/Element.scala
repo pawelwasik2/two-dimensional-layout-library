@@ -21,6 +21,17 @@ abstract class Element {
 class ArrayElement(conts: Array[String]) extends Element {
   def contents: Array[String] = conts
   //I have no idea where const is stored. In def? why not val?
+  //Moze chodzi o to, ze te nawiasy to juz w sumia sa konstruktorem i przypisuja do wartosci const te tablice,
+  //dzieki temu mozna by tej zmiennej const uzywac pozniej w funkcjach itd, chyba o to chodzi
+  //PL: Oke, chodzi o to, że zmienną const możemy poslugiwać się tylko w metodach w tej klasie, jesli chcielibysmy wyswietlic
+  //const z poziomu innej klasy czy cos to nie ma szans
 }
 //class ArrayElement inherit all non-private members from class Element,
 // and it makes the type ArrayElement a subtype of the type Element.
+
+//It's not allowed to make a method and a field with the same name in the same class in Scala
+//By contrast, Scala's two namespaces are:
+//• values (fields, methods, packages, and singleton objects)
+//• types (class and trait names)
+//You can ovverride def's with vals but u cant override val's with def's
+

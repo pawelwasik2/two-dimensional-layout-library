@@ -7,4 +7,6 @@ object Main extends App {
   val e: Element = new ArrayElement(Array("hello"))
   //type ArrayElement is compatibile with Element cause class ArrayElement extends class Element
 
+  //println(ae.const) Gives error cause of we can only use "const" in the body of this class, not from outside
+  //we should make a new field i.e. val arr = const and we could use ae.arr
 }

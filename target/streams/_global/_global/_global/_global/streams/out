@@ -1,0 +1,5 @@
+[debug] [watch] [two-dimensional-layout-library / Compile / run] Found inputs: C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\*.{java,scala},C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\src\main\java\**\*.{java,scala},C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\src\main\resources\**\*,C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\src\main\scala\**\*.{java,scala},C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\src\main\scala-2.13\**\*.{java,scala}
+[info] 1. Monitoring source files for two-dimensional-layout-library/run...
+[info]    Press <enter> to interrupt or '?' for more options.
+[debug] [watch] [debug] Received input event: Run().
+[debug] [watch] [debug] Received input event: Run().
