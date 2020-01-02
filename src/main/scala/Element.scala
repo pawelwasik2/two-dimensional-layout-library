@@ -35,3 +35,4 @@ class ArrayElement(conts: Array[String]) extends Element {
 //• types (class and trait names)
 //You can ovverride def's with vals but u cant override val's with def's
 
+
