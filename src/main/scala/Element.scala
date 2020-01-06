@@ -36,3 +36,4 @@ class ArrayElement(conts: Array[String]) extends Element {
 //You can ovverride def's with vals but u cant override val's with def's
 
 
+
