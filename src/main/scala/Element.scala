@@ -59,7 +59,8 @@ class Tiger{
 // private var age = param2
 // }
 
-class LineElement(s: String) extends ArrayElement(Array(s)) {
+class LineElement(s: String) extends Element {
+  val contents = Array(s)
   override def width = s.length
   override def height = 1
 }
@@ -67,3 +68,19 @@ class LineElement(s: String) extends ArrayElement(Array(s)) {
 //When client want to make element with a single line.
 //Since LineElement extends ArrayElement, and ArrayElement's constructor takes a parameter
 //(anArray[String]), LineElement needs to pass an argument to the primary constructor of its superclass.
+
+class UniformElement(ch: Char,
+  override val width: Int,
+  override val height: Int
+) extends Element {
+  private val line = ch.toString * width
+  def contents = Array.fill(height)(line)
+}
+
+//modifier "final" means that field cannot be overrided by subclasses:
+//final override def demo() = {
+// println("ArrayElement's implementation invoked")
+// }
+
+//for classes:
+//final class ArrayElement .........
