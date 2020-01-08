@@ -9,4 +9,7 @@ object Main extends App {
 
   //println(ae.const) Gives error cause of we can only use "const" in the body of this class, not from outside
   //we should make a new field i.e. val arr = const and we could use ae.arr
+
+  val el: Element = new LineElement("hello")
+  println(el)
 }

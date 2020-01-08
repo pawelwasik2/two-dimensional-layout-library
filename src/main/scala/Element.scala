@@ -26,6 +26,7 @@ class ArrayElement(conts: Array[String]) extends Element {
   //PL: Oke, chodzi o to, że zmienną const możemy poslugiwać się tylko w metodach w tej klasie, jesli chcielibysmy wyswietlic
   //const z poziomu innej klasy czy cos to nie ma szans
 }
+
 //class ArrayElement inherit all non-private members from class Element,
 // and it makes the type ArrayElement a subtype of the type Element.
 
@@ -35,5 +36,34 @@ class ArrayElement(conts: Array[String]) extends Element {
 //• types (class and trait names)
 //You can ovverride def's with vals but u cant override val's with def's
 
+/*** Single parametric field definition
+  * class ArrayElement(
+  *   val contents: Array[String]
+  * ) extends Element
+  *
+  * It works too
+  */
+//Example
+/*class Cat {
+  val dangerous = false
+}
+class Tiger{
+  override val dangerous: Boolean,
+  var age: Int
+}extends Cat
+*/
 
+// It's a shortcut of:
+// class Tiger(param1: Boolean, param2: Int) extends Cat {
+// override val dangerous = param1
+// private var age = param2
+// }
 
+class LineElement(s: String) extends ArrayElement(Array(s)) {
+  override def width = s.length
+  override def height = 1
+}
+
+//When client want to make element with a single line.
+//Since LineElement extends ArrayElement, and ArrayElement's constructor takes a parameter
+//(anArray[String]), LineElement needs to pass an argument to the primary constructor of its superclass.
