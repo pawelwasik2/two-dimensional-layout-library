@@ -1,2 +1,7 @@
 [debug] Acquiring lock on file C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\project\target\.sbt-compilation-infos\two-dimensional-layout-library-compile\.sbt-idea-lock ...
+[error] C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\src\main\scala\Element.scala:37:7: class ArrayElement needs to be abstract. Missing implementation for:
+[error]   def contents: Array[String] // inherited from class Element
+[error] class ArrayElement(
+[error]       ^
+[error] one error found
 [debug] Releasing lock on file C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\project\target\.sbt-compilation-infos\two-dimensional-layout-library-compile\.sbt-idea-lock.

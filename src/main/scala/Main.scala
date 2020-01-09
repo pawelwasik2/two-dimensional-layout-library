@@ -12,4 +12,7 @@ object Main extends App {
 
   val el: Element = new LineElement("hello")
   println(el)
+
+  println(new ArrayElement(Array("hello")) above
+    new ArrayElement(Array("world!")))
 }

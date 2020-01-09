@@ -1,3 +1,5 @@
+import Element.elem
+
 abstract class Element {
   //We cannot instantiate an abstract class.
   def contents: Array[String]
@@ -16,16 +18,31 @@ abstract class Element {
   //Chodzi w głównej mierze o to, by metody bezargumentowe oraz bez efektów ubocznych zapisywać bez nawiasów, jednak
   //jednak NIE WOLNO zapisywać metody, która ma efekty uboczne, bez nawiasów ponieważ bedzie wprowadzać w bład
   //Podobnie, jesli chcemy wywolac funckje z efektem ubocznym, nalezy uzyc nawiasów np: println() no i wiadomo, odwrotnie
+
+  def above(that: Element): Element =
+    elem(this.contents ++ that.contents)
+
+  def beside(that: Element): Element = {
+    elem(
+      for (
+        (line1, line2) <- this.contents zip that.contents
+      ) yield line1 + line2
+    )
+  }
+
+  override def toString = contents mkString "\n"
+
 }
 
-class ArrayElement(conts: Array[String]) extends Element {
-  def contents: Array[String] = conts
+class ArrayElement(
+  val consts: Array[String]
+) extends Element
   //I have no idea where const is stored. In def? why not val?
   //Moze chodzi o to, ze te nawiasy to juz w sumia sa konstruktorem i przypisuja do wartosci const te tablice,
   //dzieki temu mozna by tej zmiennej const uzywac pozniej w funkcjach itd, chyba o to chodzi
   //PL: Oke, chodzi o to, że zmienną const możemy poslugiwać się tylko w metodach w tej klasie, jesli chcielibysmy wyswietlic
   //const z poziomu innej klasy czy cos to nie ma szans
-}
+
 
 //class ArrayElement inherit all non-private members from class Element,
 // and it makes the type ArrayElement a subtype of the type Element.
@@ -84,3 +101,15 @@ class UniformElement(ch: Char,
 
 //for classes:
 //final class ArrayElement .........
+
+// companion object - factory object
+object Element {
+  def elem(contents: Array[String]): Element =
+    new ArrayElement(contents)
+
+  def elem(chr: Char, width: Int, height: Int): Element =
+    new UniformElement(chr, width, height)
+
+  def elem(line: String): Element =
+    new LineElement(line)
+}
