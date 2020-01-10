@@ -4,6 +4,8 @@
 [debug] 	  C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\target\scala-2.13\classes
 [debug] 	ArrayElement.class
 [debug] 	  C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\target\scala-2.13\classes\ArrayElement.class
+[debug] 	Element$.class
+[debug] 	  C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\target\scala-2.13\classes\Element$.class
 [debug] 	Element.class
 [debug] 	  C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\target\scala-2.13\classes\Element.class
 [debug] 	LineElement.class
@@ -14,4 +16,6 @@
 [debug] 	  C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\target\scala-2.13\classes\Main$delayedInit$body.class
 [debug] 	Main.class
 [debug] 	  C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\target\scala-2.13\classes\Main.class
+[debug] 	UniformElement.class
+[debug] 	  C:\Users\Pawel\Desktop\IntellijProjects\two-dimensional-layout-library\target\scala-2.13\classes\UniformElement.class
 [debug] Done packaging.

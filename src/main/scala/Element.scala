@@ -30,13 +30,25 @@ abstract class Element {
     )
   }
 
+  def widen(w: Int): Element =
+    if (w <= width) this
+    else {
+      val left = elem(' ', (w - width) / 2, height)
+      val right = elem(' ', w - width - left.width, height)
+      left beside this beside right
+    }
+
+  def heighten(h: Int): Element =
+    if (h <= height) this
+    else {
+      val top = elem(' ', width, (h - height) / 2)
+      val bot = elem(' ', width, h - height - top.height)
+      top above this above bot
+    }
+
   override def toString = contents mkString "\n"
 
 }
-
-class ArrayElement(
-  val consts: Array[String]
-) extends Element
   //I have no idea where const is stored. In def? why not val?
   //Moze chodzi o to, ze te nawiasy to juz w sumia sa konstruktorem i przypisuja do wartosci const te tablice,
   //dzieki temu mozna by tej zmiennej const uzywac pozniej w funkcjach itd, chyba o to chodzi
@@ -76,23 +88,9 @@ class Tiger{
 // private var age = param2
 // }
 
-class LineElement(s: String) extends Element {
-  val contents = Array(s)
-  override def width = s.length
-  override def height = 1
-}
-
 //When client want to make element with a single line.
 //Since LineElement extends ArrayElement, and ArrayElement's constructor takes a parameter
 //(anArray[String]), LineElement needs to pass an argument to the primary constructor of its superclass.
-
-class UniformElement(ch: Char,
-  override val width: Int,
-  override val height: Int
-) extends Element {
-  private val line = ch.toString * width
-  def contents = Array.fill(height)(line)
-}
 
 //modifier "final" means that field cannot be overrided by subclasses:
 //final override def demo() = {
@@ -104,6 +102,27 @@ class UniformElement(ch: Char,
 
 // companion object - factory object
 object Element {
+
+  private class ArrayElement(
+    val contents: Array[String]
+  ) extends Element
+
+  private class LineElement(s: String) extends Element {
+    val contents = Array(s)
+    override def width = s.length
+    override def height = 1
+  }
+
+  private class UniformElement(
+    ch: Char,
+    override val width: Int,
+    override val height: Int
+  ) extends Element {
+    private val line = ch.toString * width
+    def contents = Array.fill(height)(line)
+  }
+
+
   def elem(contents: Array[String]): Element =
     new ArrayElement(contents)
 
